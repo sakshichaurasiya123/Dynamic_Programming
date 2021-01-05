@@ -21,10 +21,11 @@ class GFG {
 	   int res=Integer.MAX_VALUE;
 	   for(int i=0; i<n; i++){
 	       int subresult=0;
-	       if(arr[i]<=val)
+	       if(arr[i]<=val){
 	       subresult=mincoin(arr,n,val-arr[i]);
 	       if(subresult!=Integer.MAX_VALUE)
 	        res=Math.min(subresult+1,res);
+		}
 	   }
 	   return res;
 	}*/
@@ -38,9 +39,10 @@ class GFG {
 	            int subresult=0;
 	            if(arr[j]<=i){
 	               subresult=dp[i-arr[j]];
-	            }
+	            
 	            if(subresult!=Integer.MAX_VALUE)
 	                dp[i]=Math.min(subresult+1,dp[i]);
+		    }
 	        }
 	    }
 	    return dp[val];
